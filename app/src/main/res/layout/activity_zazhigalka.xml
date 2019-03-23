@@ -23,7 +23,8 @@
          android:fitsSystemWindows. -->
     <FrameLayout android:layout_width="match_parent"
                  android:layout_height="match_parent"
-                 android:fitsSystemWindows="true">
+                 android:fitsSystemWindows="true" android:background="@android:color/holo_purple"
+                 android:id="@+id/onFrameLayout">
 
         <LinearLayout android:id="@+id/fullscreen_content_controls"
                       style="?metaButtonBarStyle"
@@ -39,7 +40,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/dummy_button"/>
+                    android:text="Назад" android:onClick="BackButton"/>
 
         </LinearLayout>
     </FrameLayout>

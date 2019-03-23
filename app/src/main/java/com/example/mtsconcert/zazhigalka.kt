@@ -1,10 +1,19 @@
 package com.example.mtsconcert
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_zazhigalka.*
+import rx.Observable
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
+import java.util.*
+import kotlin.concurrent.schedule
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -60,6 +69,11 @@ class zazhigalka : AppCompatActivity() {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
+
+        Timer("SettingUp", true).schedule(2000) {
+            Log.DEBUG("*","бла бла");
+            onGetScreen()
+        }
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -129,5 +143,49 @@ class zazhigalka : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+    }
+
+    fun onGetScreen() {
+        Log.d("onLogin","какой-то текст")
+        //  val e_email = findViewById<EditText>(R.id.e_email)
+        val e_color = findViewById<FrameLayout>(R.id.onFrameLayout)
+
+
+// Пример Асинхронного кода с слушателем
+        Observable.create<Any> { emitter ->
+            run {
+                try {
+
+                    emitter.onNext(service.onGetScreen(this))
+                } catch (e: Exception) {
+                    emitter.onError(e)
+                }
+            }
+        }.subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                { result  ->
+                    run {
+                        println(" onGEtScreen:$result")
+                        if (result is String) {
+                            e_color.setBackgroundColor(Color.parseColor(result))
+                        }
+                    }
+
+                },
+                { error ->
+                    run {
+                        println("onGEtScreen:$error")
+                        Toast.makeText(this, "Ошибка сервера", Toast.LENGTH_SHORT).show()
+                    }
+
+                },
+                {}
+            )
+
+    }
+    fun BackButton(view: View?)
+    {
+        finish();
     }
 }
