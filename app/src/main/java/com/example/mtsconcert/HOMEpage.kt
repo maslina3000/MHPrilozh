@@ -64,4 +64,5 @@ class HOMEpage : AppCompatActivity() {
 
         startActivityForResult(intent, 250)
     }
+
 }

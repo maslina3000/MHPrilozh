@@ -1,0 +1,4 @@
+#Sat Mar 23 16:40:02 MSK 2019
+base.0=/home/asus/AA/app/build/intermediates/transforms/dexMerger/debug/2
+path.0=classes.dex
+renamed.0=classes.dex

@@ -70,10 +70,22 @@ class zazhigalka : AppCompatActivity() {
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
 
-        Timer("SettingUp", true).schedule(2000) {
-            Log.DEBUG("*","бла бла");
+        /*Timer("SettingUp", true).i(2000) {
+            Log.d("*","бла бла");
             onGetScreen()
-        }
+        }*/
+        val timer = Timer()
+//Set the schedule function
+        timer.scheduleAtFixedRate(
+            object : TimerTask() {
+
+                override fun run() {
+                    // Magic here
+                    onGetScreen()
+                }
+            },
+            0, 2000
+        ) // 1000 Millisecond = 1 second
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
