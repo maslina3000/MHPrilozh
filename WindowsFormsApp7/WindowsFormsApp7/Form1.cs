@@ -21,6 +21,7 @@ namespace WindowsFormsApp7
         public Form1()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
         }
         string ColorPick;
         string LightPick;
@@ -72,8 +73,8 @@ namespace WindowsFormsApp7
 
                          from = "id",
                          toAll = "true",
-                         comand = "vvv",
-                         msg = "какойто "
+                         comand = comboBox1.Text,
+                         msg = Msg
                     });
 
                     streamWriter.Write(json);
