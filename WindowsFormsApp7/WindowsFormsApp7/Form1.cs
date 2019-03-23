@@ -26,8 +26,9 @@ namespace WindowsFormsApp7
         string LightPick;
         string FrequencyPick;
         string VibroPick;
+        string Msg;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SendColour()
         {
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://178.249.243.15:3313/setScreen");
             httpWebRequest.ContentType = "application/json";
@@ -37,7 +38,7 @@ namespace WindowsFormsApp7
             {
                 string json = new JavaScriptSerializer().Serialize(new
                 {
-         
+
                     color = ColorPick,
                     light = "10",
                     frequency = "10",
@@ -55,9 +56,44 @@ namespace WindowsFormsApp7
                 var result = streamReader.ReadToEnd();
                 label1.Text = Convert.ToString(result);
             }
+        }
+            private void SendMsg()
+            {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://178.249.243.15:3313/pushMsg");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
 
-          
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = new JavaScriptSerializer().Serialize(new
+                    {
 
+
+
+                         from = "id",
+                         toAll = "true",
+                         comand = "vvv",
+                         msg = "какойто "
+                    });
+
+                    streamWriter.Write(json);
+
+
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    label1.Text = Convert.ToString(result);
+                }
+            }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendColour();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -88,6 +124,17 @@ namespace WindowsFormsApp7
         private void button7_Click(object sender, EventArgs e)
         {
             ColorPick = "#ff00ff";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#c0c0c0";
+        }
+
+        private void SendMessage_Click(object sender, EventArgs e)
+        {
+            Msg = textBox1.Text;
+            SendMsg();
         }
     }
 }
