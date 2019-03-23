@@ -22,6 +22,10 @@ namespace WindowsFormsApp7
         {
             InitializeComponent();
         }
+        string ColorPick;
+        string LightPick;
+        string FrequencyPick;
+        string VibroPick;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,7 +38,7 @@ namespace WindowsFormsApp7
                 string json = new JavaScriptSerializer().Serialize(new
                 {
          
-                    color = "#ffcc00",
+                    color = ColorPick,
                     light = "10",
                     frequency = "10",
                     vibro = "true"
@@ -51,6 +55,39 @@ namespace WindowsFormsApp7
                 var result = streamReader.ReadToEnd();
                 label1.Text = Convert.ToString(result);
             }
+
+          
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#ff0000";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#ff8000";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#ffff00"; 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#00ff00";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#00ffff";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ColorPick = "#ff00ff";
         }
     }
 }
