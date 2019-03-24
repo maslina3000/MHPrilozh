@@ -18,7 +18,7 @@ class HOMEpage : AppCompatActivity() {
     }
     fun onGetScreen(view: View?) {
 // Log.d("onLogin","onLogin")
-      //  val e_email = findViewById<EditText>(R.id.e_email)
+        //  val e_email = findViewById<EditText>(R.id.e_email)
 
 
 // Пример Асинхронного кода с слушателем
@@ -32,25 +32,25 @@ class HOMEpage : AppCompatActivity() {
                 }
             }
         }.subscribeOn(Schedulers.newThread())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                { result ->
-                    run {
-                        println(" onGEtScreen:$result")
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { result ->
+                            run {
+                                println(" onGEtScreen:$result")
 
 
-                    }
+                            }
 
-                },
-                { error ->
-                    run {
-                        println(" onGEtScreen:$error")
-                        Toast.makeText(this, "Ошибка сервера", Toast.LENGTH_SHORT).show()
-                    }
+                        },
+                        { error ->
+                            run {
+                                println(" onGEtScreen:$error")
+                                Toast.makeText(this, "Ошибка сервера", Toast.LENGTH_SHORT).show()
+                            }
 
-                },
-                {}
-            )
+                        },
+                        {}
+                )
 
     }
 
@@ -64,4 +64,5 @@ class HOMEpage : AppCompatActivity() {
 
         startActivityForResult(intent, 250)
     }
+
 }
