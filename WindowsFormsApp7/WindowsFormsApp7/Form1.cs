@@ -100,36 +100,43 @@ namespace WindowsFormsApp7
         private void button2_Click(object sender, EventArgs e)
         {
             ColorPick = "#ff0000";
+            SendColour();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ColorPick = "#ff8000";
+            SendColour();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ColorPick = "#ffff00"; 
+            ColorPick = "#ffff00";
+            SendColour();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ColorPick = "#00ff00";
+            SendColour();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             ColorPick = "#00ffff";
+            SendColour();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             ColorPick = "#ff00ff";
+            SendColour();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             ColorPick = "#c0c0c0";
+            SendColour();
         }
 
         private void SendMessage_Click(object sender, EventArgs e)
