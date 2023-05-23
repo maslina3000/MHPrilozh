@@ -1,0 +1,13 @@
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe.config
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.pdb
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\Newtonsoft.Json.dll
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\Newtonsoft.Json.pdb
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\Newtonsoft.Json.xml
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\Mts_Concert_Operator.csprojResolveAssemblyReference.cache
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Form1.resources
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Properties.Resources.resources
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\Mts_Concert_Operator.csproj.GenerateResource.Cache
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\Mts_Concert_Operator.csproj.CoreCompileInputs.cache
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.exe
+C:\GITHUB\MHPrilozh\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.pdb
